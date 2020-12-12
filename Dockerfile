@@ -1,7 +1,7 @@
 FROM maven:3.5.4-jdk-8 AS stage-atlas
 
 ENV	MAVEN_OPTS "-Xms2g -Xmx2g"
-ENV ATLAS_REV "21b15842fd74bc91910b2d8901dbea57769065d0"
+ENV ATLAS_REV "da3551938deceaf714f80ec8c0927161646cb8bb"
 
 RUN git clone http://github.com/apache/atlas.git \
 	&& cd atlas \
