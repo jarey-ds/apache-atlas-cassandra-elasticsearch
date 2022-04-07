@@ -8,7 +8,20 @@ services:
       - "21000:21000"
     depends_on:
       - "zookeeper"
-      - "kafka" 
+      - "kafka"
+      - "cassandra"
+      - "elasticsearch"
+  cassandra:
+    image: cassandra:latest
+    hostname: cassandra
+    ports:
+      - "7000:7000"
+      - "9042:9042"
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
   zookeeper:
     image: wurstmeister/zookeeper
     hostname: zookeeper

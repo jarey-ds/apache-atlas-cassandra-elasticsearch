@@ -6,7 +6,8 @@ ENV ATLAS_REV "release-2.2.0-rc1"
 RUN git clone http://github.com/apache/atlas.git \
 	&& cd atlas \
 	&& git reset --hard $ATLAS_REV \
-	&& mvn clean -DskipTests package -Pdist,embedded-hbase-solr \
+	#&& mvn clean -DskipTests package -Pdist,embedded-hbase-solr \
+    && mvn clean -DskipTests package -Pdist \
 	&& mv distro/target/apache-atlas-*-bin.tar.gz /apache-atlas.tar.gz
 
 FROM centos:7
